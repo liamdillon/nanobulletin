@@ -4,3 +4,4 @@ virtualenv flask-env
 . flask-env/bin/activate
 pip install Flask
 python setup.py
+. flask-env/bin/activate
