@@ -1,7 +1,5 @@
-Create a virtualenv directory, i.e. "virtualenv venv" and activate it with ". venv/bin/activate".
+Nanobulletin, a completely featureless bulletin board.
 
-Install Flask in the virtualenv by running "pip install Flask".
+Loosely based on the blog application found in the Flask tutorial.
 
-Open a python instance within the nanobulletin directory and do:
-	import nanob
-	nanob.init_db()
+In order to run it, follow the instructions found in INSTALL.  Then, start it up with "python nanob.py".  Flask runs on port 5000 by default, so visit http://localhost:5000/ to have a heated discussion with yourself on your message board of one.
