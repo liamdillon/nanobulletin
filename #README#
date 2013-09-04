@@ -1,0 +1,5 @@
+Nanobulletin, a completely featureless bulletin board.
+
+Loosely based on the blog application found in the Flask tutorial.
+
+In order to run it, follow the instructions found in INSTALL.  Then, start it up with "python nanob.py".  Flask runs on port 5000 by default, so visit http://localhost:5000/ to have a heated discussion with yourself on your message board of one.
