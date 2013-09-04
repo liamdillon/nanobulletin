@@ -1,4 +1,7 @@
-To set up nanobulletin, run the "setup" bash script using ". setup" or "source setup".
+To set up nanobulletin, run the "setup" script using:
+   . setup 
+   OR 
+   source setup
 
 What this does:
 
