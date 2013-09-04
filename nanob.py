@@ -7,6 +7,7 @@ from contextlib import closing
 #This one does it on a posix system
 DATABASE = '/tmp/nanob.db'
 DEBUG = True
+SECRET_KEY = 'super secret development key'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
