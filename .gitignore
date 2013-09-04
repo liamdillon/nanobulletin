@@ -1,4 +1,4 @@
-venv/
+flask-env/
 *.pyc
 #*
 *.py~
