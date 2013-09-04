@@ -1,0 +1,3 @@
+function confirmEmptyContent() {
+    confirm("Are you sure you want to submit a post with no content?");
+}
