@@ -2,11 +2,10 @@ import sqlite3
 from flask import *
 from contextlib import closing
 
-#This line puts the database in the temp directory on win32
-#DATABASE = r'C:\Users\liam\AppData\Local\Temp\nanob.db'
-#This one does it on a posix system
+#Put the database in the /tmp directory
 DATABASE = '/tmp/nanob.db'
 DEBUG = True
+#session key
 SECRET_KEY = 'super secret development key'
 
 app = Flask(__name__)
@@ -33,6 +32,7 @@ def teardown_request(exception):
 
 @app.route('/')
 def all_posts():
+	#retrieve all posts from the db and pass them to the all_posts.html template
 	cur = g.db.execute('select title, content from posts order by id asc')
 	posts = [dict(title=row[0], content = row[1]) for row in cur.fetchall()]
 	return render_template('all_posts.html', posts = posts)
