@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
 	<form action="{{ url_for('make_post') }}" method=post class=make-post>
+	  <div class=post-form>
 		<div>Title:
 			<div><input type=text name=title></div>
 		</div>
@@ -8,11 +9,16 @@
 			<div><textarea name=content rows=5 cols=40></textarea></div>
 		</div>
 		<div><input type=submit value=Submit></div>
+	  </div>
 	</form>
 
 	<ul class=posts>
 	{% for post in posts %}
-		<li><h2>{{ post.title }}</h2>{{ post.content }}
+	<div class=post>
+		<li><h2>{{ post.title }}</h2>
+
+		<div class=content>{{ post.content }}</div>
+	</div>
 	{% else %}
 		<li>No posts found
 	{% endfor %}

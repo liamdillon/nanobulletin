@@ -1,10 +1,10 @@
 #!/bin/bash
 
 activate_flask-env () {
-. flask-env/bin/activate
+source flask-env/bin/activate
 }
 
 virtualenv flask-env
 activate_flask-env
-pip install Flask
+pip -q install Flask
 python setup.py
