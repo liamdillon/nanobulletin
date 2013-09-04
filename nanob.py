@@ -39,8 +39,13 @@ def all_posts():
 
 @app.route('/make', methods=['POST'])
 def make_post():
+	title = request.form['title']
+	if title == "":
+		flash('Your post has no title')
+		return redirect(url_for('all_posts'))
+
 	g.db.execute('insert into posts (title, content) values (?, ?)',
-					[request.form['title'], request.form['content']])
+					[title, request.form['content']])
 	g.db.commit()
 	flash('New post added')
 	return redirect(url_for('all_posts'))

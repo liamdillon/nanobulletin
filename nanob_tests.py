@@ -29,5 +29,12 @@ class NanobTestCase(unittest.TestCase):
         assert 'Test title' in page.data
         assert 'Test content' in page.data
 
+    def test_no_title(self):
+        #make sure you can't make a post without a title
+        page = self.app.post('/make', data = {'title':'', 'content':'whatever'},follow_redirects=True)
+        assert 'No posts found' in page.data
+        assert 'Your post has no title' in page.data
+        assert 'whatever' not in page.data
+
 if __name__ == '__main__':
     unittest.main()
