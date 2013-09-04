@@ -1,0 +1,3 @@
+Create a virtualenv directory, and activate it with venv/bin/activate
+
+Install Flask by running "pip install Flask"
