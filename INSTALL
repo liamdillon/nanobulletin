@@ -1,0 +1,11 @@
+To set up nanobulletin, run the "setup" bash script using ". setup" or "source setup".
+
+What this does:
+
+Create a virtualenv directory, i.e. "virtualenv venv" and activate it with ". venv/bin/activate".
+
+Install Flask in the virtualenv by running "pip install Flask".
+
+setup.py just does the following in order to initialize the db:
+	import nanob
+	nanob.init_db()
