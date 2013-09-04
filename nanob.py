@@ -2,9 +2,11 @@ import sqlite3
 from flask import *
 from contextlib import closing
 
-DATABASE = r'C:\Users\liam\AppData\Local\Temp\flaskr.db'
+#This line puts the database in the temp directory on win32
+#DATABASE = r'C:\Users\liam\AppData\Local\Temp\nanob.db'
+#This one does it on a posix system
+DATABASE = 'tmp/nanob.db'
 DEBUG = True
-SECRET_KEY = 'super secret development key'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
