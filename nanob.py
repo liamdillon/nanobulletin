@@ -5,7 +5,7 @@ from contextlib import closing
 #This line puts the database in the temp directory on win32
 #DATABASE = r'C:\Users\liam\AppData\Local\Temp\nanob.db'
 #This one does it on a posix system
-DATABASE = 'tmp/nanob.db'
+DATABASE = '/tmp/nanob.db'
 DEBUG = True
 
 app = Flask(__name__)
