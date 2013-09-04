@@ -1,3 +1,7 @@
 Create a virtualenv directory, and activate it with venv/bin/activate
 
 Install Flask by running "pip install Flask"
+
+Open a python instance within the nanobulletin directory and do:
+	import nanob
+	nanob.init_db()
