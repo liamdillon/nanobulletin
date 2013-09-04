@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
-	<form action="{{ url_for('make_post') }}" method=post class=make-post>
+	<form onSubmit="return confirmEmptyContent(this);" action="{{ url_for('make_post') }}" method=post class=make-post name=post_form>
 	  <div class=post-form>
 		<div>Title:
 			<div><input type=text name=title></div>
