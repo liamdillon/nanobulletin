@@ -1,7 +1,12 @@
-function confirmEmptyContent() {
+function validatePost() {
     var content = document.forms["post_form"]["content"].value;
-    console.log(content);
-    if (content==null || content == "") {
+    var title = document.forms["post_form"]["title"].value;
+
+    if (title==null || title=="") {
+	alert("You can't make a post with no title");
+	return false;
+    }
+    if (content==null || content=="") {
 	resp = confirm("Are you sure you want to submit a post with no content?");
     }
     if(resp) return true;
