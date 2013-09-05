@@ -4,7 +4,7 @@ from contextlib import closing
 
 #Put the database in the /tmp directory
 DATABASE = '/tmp/nanob.db'
-DEBUG = True
+DEBUG = False
 #session key
 SECRET_KEY = 'super secret development key'
 
