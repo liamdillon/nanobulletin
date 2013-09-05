@@ -15,9 +15,14 @@
 	<ul class=posts>
 	{% for post in posts %}
 	<div class=post>
+	        
 		<li><h2>{{ post.title }}</h2>
 
 		<div class=content>{{ post.content }}</div>
+		<form onSubmit="return confirmDelete(this);" action="{{ url_for('delete_post') }}" method=post class=delete-post>
+		<input type=hidden value="{{ post.post_id }}" name=post_to_delete></input>
+		<input type=submit value=Delete></input>
+		</form>
 	</div>
 	{% else %}
 		<li>No posts found

@@ -12,3 +12,8 @@ function validatePost() {
     if(resp) return true;
     else return false;
 };
+
+function confirmDelete() {
+    resp = confirm("Are you sure you want to delete this post?");
+    return resp;
+};

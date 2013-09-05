@@ -36,5 +36,14 @@ class NanobTestCase(unittest.TestCase):
         assert 'Your post has no title' in page.data
         assert 'whatever' not in page.data
 
+    def test_delete_post(self):
+        #tests post deletion
+        page = self.app.post('/make', data = {'title':'test_title', 'content':'test_content'},follow_redirects=True)
+        assert 'test_title' in page.data
+        
+        self.app.post('/delete_post', data = {'id':1})
+        assert 'Post successfully deleted' in page.data
+        assert 'test_title' not in page.data
+
 if __name__ == '__main__':
     unittest.main()
