@@ -33,8 +33,8 @@ def teardown_request(exception):
 @app.route('/')
 def all_posts():
 	#retrieve all posts from the db and pass them to the all_posts.html template
-	cur = g.db.execute('select title, content from posts order by id asc')
-	posts = [dict(title=row[0], content = row[1]) for row in cur.fetchall()]
+	cur = g.db.execute('select title, content, id from posts order by id asc')
+	posts = [dict(title=row[0], content = row[1], post_id = row[2]) for row in cur.fetchall()]
 	return render_template('all_posts.html', posts = posts)
 
 @app.route('/make', methods=['POST'])
@@ -48,6 +48,14 @@ def make_post():
 					[title, request.form['content']])
 	g.db.commit()
 	flash('New post added')
+	return redirect(url_for('all_posts'))
+
+@app.route('/delete_post', methods=['POST'])
+def delete_post():
+	post_id = request.form['post_to_delete']
+	g.db.execute('delete from posts where id = ?;', [post_id])
+	g.db.commit()
+	flash('Post successfully deleted')
 	return redirect(url_for('all_posts'))
 
 if __name__ == '__main__':
